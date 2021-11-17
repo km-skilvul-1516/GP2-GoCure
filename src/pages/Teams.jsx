@@ -17,7 +17,7 @@ const Teams = () => {
     }
 
     return (
-        <div>
+        <div className="bg-extra-end">
             <nav className="bg-white py-1 fixxed px-8 md:px-48 shadow-sm">
                 <div className="relative flex items-center justify-between h-16">
 
@@ -39,19 +39,19 @@ const Teams = () => {
                     
                 </div>
             </nav>
-            <div className="md:px-48 py-32">
+            <div className="px-8 md:px-48 py-32">
                 <div className="font-bold text-3xl flex justify-center pb-10">
                     Our Teams
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 md:gap-y-4">
                     <DevCard
                         img="team-randy.png"
                         name="Randy Christian"
                         campus="Universitas Brawijaya"
-                        roles="Leader, Frontend Developer" 
+                        roles="Team Leader, Frontend Developer" 
                     />
                     <DevCard
-                        img="tojj.jpg"
+                        img="man.jpeg"
                         name="Salman Setiawan"
                         campus="Institut Teknologi Kalimantan"
                         roles="Designer, Frontend Developer" 

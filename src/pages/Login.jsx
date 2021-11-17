@@ -29,7 +29,7 @@ const Login = (props) => {
   function handleLogin (e) {
     e.preventDefault();
     if (email === "" || password === "") {
-        setAlertMsg("Please fill in all the required fields (*)")
+        setAlertMsg("Please fill in all the required fields")
         setAlert(true);
     }
     else if (currentUser && currentUser.email === email){
@@ -63,8 +63,8 @@ const Login = (props) => {
 
   return (
     <div>
-      <div className="bg-screen-blob h-screen flex justify-center items-center">
-        <div className="w-5/6 md:w-2/3 h-2/3">
+      <div className="bg-screen-blob h-full xl:h-screen flex justify-center items-center">
+        <div className="py-20 w-5/6 md:w-2/3 h-2/3">
           <div className="rounded-2xl bg-white h-full">
             <div className="flex flex-col md:flex-row justify-between gap-x-12">
               <img
@@ -81,10 +81,13 @@ const Login = (props) => {
                       alt=""
                     />
                   </div>
+                  <div className="pt-3">
+                      {alert ? <Alert alertMsg={alertMsg}/> : ""}
+                  </div>
                   <form>
                     {/* Form 2 */}
                     <div>
-                      <div className="flex flex-wrap pt-3">
+                      <div className="flex flex-wrap">
                         <div className="w-full">
                           <label className="tracking-wide text-sm font-bold">
                             Email
@@ -121,9 +124,7 @@ const Login = (props) => {
                         </div>
                       </div>
                     </div>
-                    {alert ? <Alert alertMsg={alertMsg}/> : ""}
                     <div className="flex justify-center md:justify-start pt-8 md:pt-3">
-                      {/* { logSuccess ? redirectRegister() : ""} */}
                       <button
                         onClick={handleLogin}
                         className={"py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold"}
@@ -131,7 +132,7 @@ const Login = (props) => {
                         Login
                       </button>
                     </div>
-                    <div className="pt-2 justify-center flex md:justify-start">
+                    <div className="pt-6 justify-center flex md:justify-start">
                       {
                         !logSuccess ? (
                         <p className="text-sm pb-6">Don't have an account? 
