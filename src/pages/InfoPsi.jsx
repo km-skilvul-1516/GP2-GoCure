@@ -111,7 +111,7 @@ const InfoPsi = () => {
             </div>
 
             <div className="sidebar flex items-center pr-2 md:pr-3 lg:pr-4 xl:pr-16 py-36 lg:py-40 xl:py-64">
-                <div className="bg-white px-2.5 md:px-3 lg:px-4 rounded-full">
+                <div className="bg-white py-3 rounded-full">
                     <Navbar />
                 </div>
             </div>

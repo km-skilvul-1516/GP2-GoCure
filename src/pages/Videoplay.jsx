@@ -114,7 +114,7 @@ const Videoplay = () => {
                     </div>
                 </div>
             </div>
-            <div className="botbar flex w-full justify-center pb-5">
+            <div className="botbar flex w-full justify-center pb-6 md:pb-8">
                 <div className="bg-white px-2.5 md:px-3 lg:px-4 rounded-full border border-gray-700">
 
                     <NavbarRow />
