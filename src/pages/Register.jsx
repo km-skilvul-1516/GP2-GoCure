@@ -18,6 +18,9 @@ const Register = (props) => {
     const [currentUser, setCurrentUser] = useState("");
     const navigate = useNavigate();
 
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const passwordRegex = /^[a-zA-Z0-9]{8,}$/
+
     useEffect(() => {
         if(user){
             if(user.length !== 0){
@@ -37,6 +40,14 @@ const Register = (props) => {
         else {
             if (name === "" || email === "" || password === "" || confirmPassword === "") {
                 setAlertMsg("Please fill in all the required fields (*)")
+                setAlert(true);
+            }
+            else if (!emailRegex.test(email)){
+                setAlertMsg("Invalid email.")
+                setAlert(true);
+            }
+            else if (!passwordRegex.test(password)){
+                setAlertMsg("Password should contain at least 8 characters")
                 setAlert(true);
             }
             else if (password !== confirmPassword){
