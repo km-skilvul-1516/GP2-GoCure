@@ -10,7 +10,7 @@ const Header = (props) => {
                         <p className="text-sm md:text-xl text-white md:pb-1">
                             {props.hi}
                         </p>
-                        <p className="text-xl md:text-3xl text-white font-bold">
+                        <p className="text-xl md:text-2xl text-white font-bold">
                             {props.name}
                         </p>
                         </div>
