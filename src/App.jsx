@@ -62,7 +62,9 @@ function App() {
             <Route element={<LoadingPage />} />
           </Route>
 
-          <Route path="/collab" element={<Collab />}/>
+          <Route path="/collab" element={<PrivateOutlet />}/>
+            <Route element={<Collab />} />
+          </Route>
           
         </Routes>
       </main>
