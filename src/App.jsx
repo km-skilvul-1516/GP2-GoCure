@@ -15,6 +15,7 @@ import ForbiddenPage from "./pages/ForbiddenPage";
 import InfoPsi from "./pages/InfoPsi";
 import useAuth from "./services/useAuth";
 import Teams from "./pages/Teams";
+import Collab from "./pages/Collab";
 
 function PrivateOutlet() {
   const auth = useAuth();
@@ -61,6 +62,8 @@ function App() {
             <Route element={<LoadingPage />} />
           </Route>
 
+          <Route path="/collab" element={<Collab />}/>
+          
         </Routes>
       </main>
     </>
