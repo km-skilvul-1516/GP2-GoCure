@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import LogoImg from '../images/logo.svg'
 import { Link } from "react-router-dom";
 import Alert from '../components/Alert';
 
 const Collab = () => {
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [asal, setInstansi] = useState("");
+    const [alertMsg, setAlertMsg] = useState("");
+    const [alert, setAlert] = useState(false);
+
+    function handleRegister (e) {
+        e.preventDefault();
+        if (email === "" || name === "" || phone === "" || asal === "") {
+            setAlertMsg("Please fill in all the required fields")
+            setAlert(true);
+        } else {
+            setAlertMsg("Apply success")
+            setAlert(true);
+        }
+    }
+
     return (
         <div>
             <div className="bg-screen-blob h-full xl:h-screen flex justify-center items-center">
@@ -17,6 +35,9 @@ const Collab = () => {
                                         src={LogoImg} 
                                         alt="" 
                                     />
+                                </div>
+                                <div className="flex justify-center pb-6">
+                                    <b>Partnership</b>
                                 </div>
                                 <div className="pt-3">
                                     {alert ? <Alert alertMsg={alertMsg}/> : ""}
@@ -93,7 +114,7 @@ const Collab = () => {
                                     </div>
                                     <div className="flex justify-center md:justify-start pt-8 md:pt-5">
                                         <button onClick={handleRegister} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold">
-                                            Submit
+                                            Apply
                                         </button>
                                     </div>
                                 </form>                                
